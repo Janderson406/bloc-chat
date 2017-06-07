@@ -1,17 +1,13 @@
-<h1>Bloc Chat</h1>
+<div class="sidebar">
+  <div class="logo-wrapper">
+    <div class="circle"></div>
+    <h1><span>Bloc</span><br/><span>Chat</span></h1>
+  </div>
 
-  <!-- <div ng-repeat="room in rooms.room">
-    <h4>
-      {{ room.name}}
-
-      {{R}}
-      {{Room.all}}
-      {{rooms}}
-    </h4> -->
-
-
-
-
-  <div ng-repeat="room in home.rooms" >
-      <h3 >{{ room.name }}</h3>
-  </div
+  <div class=room-list>
+    <h2>Rooms:</h2>
+    <div ng-repeat="room in rooms" >
+        <h3>{{ room.$value }}</h3>
+    </div>
+  </div>
+</div>

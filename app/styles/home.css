@@ -1,0 +1,50 @@
+
+.sidebar {
+  padding:1rem 1rem 1rem 1rem;
+  margin: 0rem;
+  float:left;
+  width: 300px;
+  height: auto;
+  /*background-color: rgb(207, 140, 196);  outline div*/
+}
+
+.logo-wrapper{
+  align-content: center;
+  margin-top: 20px;
+}
+
+.circle {
+  margin: auto;
+  height: 230px;
+  width: 230px;
+  border-radius: 100%;
+  background: #11D5E6;
+
+
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  color: #D5E2D6;
+  text-align: center;
+  line-height: 57px;
+  margin-top: -190px;
+  -moz-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(1deg) skewY(1deg);
+  -webkit-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(1deg) skewY(1deg);
+  -o-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(1deg) skewY(1deg);
+  -ms-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(1deg) skewY(1deg);
+  transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(1deg) skewY(1deg);
+    /*-----------------------*/
+  text-shadow: 1px 1px #593E3C, 2px 2px #593E3C, 3px 3px #593E3C, 4px 4px #593E3C, 5px 5px #593E3C, 6px 6px #593E3C, 7px 7px #593E3C, 8px 8px #593E3C, 9px 9px #593E3C, 10px 10px #593E3C, 11px 11px #4A744D, 12px 12px #4A744D, 13px 13px #4A744D, 14px 14px #4A744D, 15px 15px #4A744D, 16px 16px #4A744D, 17px 17px #4A744D, 18px 18px #4A744D, 19px 19px #4A744D, 20px 20px #4A744D, 21px 21px #4A744D, 22px 22px 6px #06520C;
+}
+
+span  {
+  font-size: 75px;
+}
+
+.room-list {
+  padding-top: 35px;
+  padding-left: 50px;
+  font-family: 'BioRhyme', serif;
+  color: #624644;
+}
