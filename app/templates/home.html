@@ -5,9 +5,11 @@
   </div>
 
   <div class=room-list>
-    <h2>Rooms:</h2>
+
+    <h2><button type="button" class="btn btn-default btn-lg" ng-click="open()">Add Room</button></h2>
     <div ng-repeat="room in rooms" >
         <h3>{{ room.$value }}</h3>
     </div>
   </div>
+
 </div>
