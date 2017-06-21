@@ -1,5 +1,5 @@
 (function() {
-    function UserCtrl($uibModalInstance, $cookies, UserCookie) {
+    function UserCtrl($uibModalInstance, $cookies) {
         var user = this;
 
         user.addUsername = function () {
@@ -10,5 +10,5 @@
 
     angular
         .module('blocChat')
-        .controller('UserCtrl', ['$uibModalInstance', '$cookies', 'UserCookie', UserCtrl]);
+        .controller('UserCtrl', ['$uibModalInstance', '$cookies', UserCtrl]);
 })();

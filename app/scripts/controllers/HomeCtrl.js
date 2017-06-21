@@ -1,13 +1,13 @@
 (function() {
-  function HomeCtrl(Room, Message, $scope, $log, $uibModal) {
+  function HomeCtrl(Room, Message, $scope, $log, $uibModal, $cookies) {
 
     $scope.rooms = Room.all;
     $scope.currentRoom = null;
+    $scope.currentUser = $cookies.get('blocChatCurrentUser');
     $scope.messages = {};
 
     $scope.open = function() {
       var modalInstance = $uibModal.open({
-        animation: $scope.animationsEnabled,
         component: 'newRoom',
         resolve: {
           rooms: function() {
@@ -25,16 +25,12 @@
 
     $scope.selectRoom = function(room) {
       $scope.currentRoom = room;
-      // $scope.roomid =
       console.log(room);
       $scope.messages = Message.getByRoomId(room.$id);
-      // if ($scope.messages.content == {})
-      // {messages.content = "There's nothing in this room"};
-      // console.log(Message.getByRoomId(room.roomId));
     }
 
   };
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room', 'Message', '$scope', '$log', '$uibModal', HomeCtrl]);
+    .controller('HomeCtrl', ['Room', 'Message', '$scope', '$log', '$uibModal', '$cookies', HomeCtrl]);
 })();
