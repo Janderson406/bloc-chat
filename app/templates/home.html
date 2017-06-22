@@ -5,7 +5,10 @@
   </div>
 
   <div class=room-list>
-    <h5>Logged in as: {{ currentUser }}</h5>
+    <div class="user-info" ng-show="currentUser">
+      Hello, {{ currentUser }}!
+      <div class="log-out" ng-click="clearUser()">Log Out</div>
+    </div>
     <h2><button type="button" class="btn btn-default btn-lg" ng-click="open()">Add Room</button></h2></br>
     <div ng-repeat="room in rooms" >
         <h4 class="room-name" ng-click="selectRoom(room)">{{ room.$value }}</h4>
