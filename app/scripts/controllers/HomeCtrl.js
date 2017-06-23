@@ -1,9 +1,9 @@
 (function() {
-  function HomeCtrl(Room, Message, $scope, $log, $uibModal, $cookies, $state) {
+  function HomeCtrl(Room, Message, $scope, $log, $uibModal, $cookies, $state, User) {
 
     $scope.rooms = Room.all;
     $scope.currentRoom = null;
-    $scope.currentUser = $cookies.get('blocChatCurrentUser');
+    $scope.currentUser = User.data;
     $scope.messages = {};
 
     var reloadPage = function(){window.location.reload();} // reload to force no-cookie modal
@@ -29,7 +29,7 @@
       $scope.currentRoom = room;
       console.log(room);
       $scope.messages = Message.getByRoomId(room.$id);
-    }
+    };
 
     $scope.clearUser = function () { ////
       $cookies.remove('blocChatCurrentUser');
@@ -37,8 +37,12 @@
       reloadPage();
     }
 
+    $scope.createMessage = function(){
+      $scope.newMessage.id = $scope.currentRoom;
+    };
+
   };
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room', 'Message', '$scope', '$log', '$uibModal', '$cookies', '$state', HomeCtrl]);
+    .controller('HomeCtrl', ['Room', 'Message', '$scope', '$log', '$uibModal', '$cookies', '$state', 'User', HomeCtrl]);
 })();

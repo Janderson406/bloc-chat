@@ -1,15 +1,13 @@
 (function() {
-    function UserCtrl($uibModalInstance, $cookies, $state) {
-        var user = this;
+  function UserCtrl($uibModalInstance, $cookies, $state) {
+    var user = this;
 
-        user.addUsername = function () {
-            $cookies.put('blocChatCurrentUser', user.username);
-            $uibModalInstance.close();
-            $state.reload();
-        };
-    }
+    user.addUsername = function () {
+      $uibModalInstance.close(user.username);
+    };
+  }
 
-    angular
-        .module('blocChat')
-        .controller('UserCtrl', ['$uibModalInstance', '$cookies', '$state', UserCtrl]);
+  angular
+      .module('blocChat')
+      .controller('UserCtrl', ['$uibModalInstance', '$cookies', '$state', UserCtrl]);
 })();

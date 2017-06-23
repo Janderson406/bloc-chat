@@ -10,8 +10,13 @@
         return $firebaseArray(ref.orderByChild('roomId').equalTo(roomId));
     };
 
+
+    Message.send = function(newMessage) {
+        // Send method logic
+        messages.$add(newMessage);
+    };
+
     return Message;
-    // };
   }
 
   angular
