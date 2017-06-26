@@ -17,19 +17,32 @@
 
 </div>
 
-<div class = "message-room-container">
+<div class = "message-room-container" ng-show="currentRoom.$id">
   <div class="messages-header">
     <!-- <h2>Array: {{messages}}</h2> -->
     <h2>{{ currentRoom.$value }}</h2>
   </div>
-  <div class="messages-list" ng-repeat="message in messages">
-    <div class="">{{ message.username }} | {{ message.sentAt }}</div>
-    <div class="message-content">{{ message.content }}</div></br>
+  <div scroll-glue>
+    <div class="messages">
+      <div class="messages-list" ng-repeat="message in messages">
+        <div class="">{{ message.username }} | {{ message.sentAt }}</div>
+        <div class="message-content">{{ message.content }}</div></br>
+      </div>
+      <span class="message-content" ng-bind="newMessage.content">{{ newMessage.content }}</span>
+    </div>
   </div>
+
+
 
   <div class="message-form">
-    <input type="text" name="input" placeholder="Type your message here" class="message-box" ng-model="newMessage.content">
-    <button class="btn btn-sm" type="button" ng-click="createMessage()">SEND</button>
+    <input ng-keyup="$event.keyCode == 13 && createMessage()" type="text" name="input" placeholder="Type your message here" class="message-box" ng-model="newMessage.content">
+    <button class="btn btn-sm" ng-disabled="form.$invalid" type="button" ng-click="createMessage()">SEND</button>
   </div>
+</div>
 
+
+<div class = "message-room-container" ng-show="!currentRoom.$id">
+  <div class="pick-room">
+    PICK A ROOM OR CLICK "ADD ROOM" TO START A NEW ONE!
+  </div>
 </div>
