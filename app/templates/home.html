@@ -1,12 +1,12 @@
 <div class="sidebar">
   <div class="logo-wrapper">
     <div class="circle"></div>
-    <h1><span>Bloc</span><br/><span>Chat</span></h1>
+    <h1><span class="title">Bloc</span><br/><span class="title">Chat</span></h1>
   </div>
 
   <div class=room-list>
     <div class="user-info" ng-show="currentUser.username">
-      Hello, {{ currentUser.username }}!
+      Hello, <span class="user-name">{{ currentUser.username }}!</span>
       <div class="log-out" ng-click="clearUser()">Log Out</div>
     </div>
     <h2><button type="button" class="btn btn-default btn-lg" ng-click="open()">Add Room</button></h2></br>
@@ -17,32 +17,30 @@
 
 </div>
 
-<div class = "message-room-container" ng-show="currentRoom.$id">
+<!-- <div class = "message-room-container" ng-show="currentRoom.$id"> -->
+<div class = "message-room-container">
   <div class="messages-header">
     <!-- <h2>Array: {{messages}}</h2> -->
     <h2>{{ currentRoom.$value }}</h2>
   </div>
-  <div scroll-glue>
-    <div class="messages">
+  <!-- <div scroll-glue> -->
+    <div class="messages" scroll-glue>
       <div class="messages-list" ng-repeat="message in messages">
-        <div class="">{{ message.username }} | {{ message.sentAt }}</div>
+        <div class="">{{ message.username }} | {{ message.sentAt | date: "medium" }}</div> <!-- add ng-show for class where u.n. is currentUser ??-->
         <div class="message-content">{{ message.content }}</div></br>
       </div>
-      <span class="message-content" ng-bind="newMessage.content">{{ newMessage.content }}</span>
+      <!-- <span class="message-content" ng-bind="newMessage.content">{{ newMessage.content }}</span> -->
     </div>
-  </div>
-
-
+  <!-- </div> -->
 
   <div class="message-form">
     <input ng-keyup="$event.keyCode == 13 && createMessage()" type="text" name="input" placeholder="Type your message here" class="message-box" ng-model="newMessage.content">
     <button class="btn btn-sm" ng-disabled="form.$invalid" type="button" ng-click="createMessage()">SEND</button>
   </div>
-</div>
 
-
-<div class = "message-room-container" ng-show="!currentRoom.$id">
+<!-- <div class = "message-room-container" ng-show="!currentRoom.$id">
+<div class = "message-room-container">
   <div class="pick-room">
     PICK A ROOM OR CLICK "ADD ROOM" TO START A NEW ONE!
   </div>
-</div>
+</div> -->

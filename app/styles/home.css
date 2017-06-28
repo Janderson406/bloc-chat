@@ -38,13 +38,18 @@ h1 {
   text-shadow: 1px 1px #593E3C, 2px 2px #593E3C, 3px 3px #593E3C, 4px 4px #593E3C, 5px 5px #593E3C, 6px 6px #593E3C, 7px 7px #593E3C, 8px 8px #593E3C, 9px 9px #593E3C, 10px 10px #593E3C, 11px 11px #4A744D, 12px 12px #4A744D, 13px 13px #4A744D, 14px 14px #4A744D, 15px 15px #4A744D, 16px 16px #4A744D, 17px 17px #4A744D, 18px 18px #4A744D, 19px 19px #4A744D, 20px 20px #4A744D, 21px 21px #4A744D, 22px 22px 6px #06520C;
 }
 
-span  {
+.title  {
   font-size: 75px;
 }
 
 .user-info {
   padding-top: 20px;
-  font-size: 1em;
+  /*font-size: 2em;*/
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .log-out {
@@ -64,6 +69,8 @@ span  {
   padding-left: 50px;
   letter-spacing: 1px;
 }
+
+
 
 .room-name:hover {
   cursor: pointer; cursor: hand;

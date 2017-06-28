@@ -5,7 +5,9 @@
     $scope.currentRoom = null;
     $scope.currentUser = User.data;
     $scope.messages = {};
-    $scope.glued = true;
+    // $scope.glued = true;
+
+
 
 
     var reloadPage = function(){window.location.reload();} // reload to force no-cookie modal
@@ -42,8 +44,9 @@
     $scope.createMessage = function(){
       $scope.newMessage.roomId = $scope.currentRoom.$id;
       $scope.newMessage.username = User.data.username;
+      $scope.newMessage.sentAt = Date.now();
       Message.send($scope.newMessage);
-      // $scope.newMessage.sentAt =
+
       $scope.newMessage.content = '';
     };
 
