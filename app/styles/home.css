@@ -61,7 +61,32 @@ h1 {
   -webkit-transition: color 100ms linear;
   -ms-transition: color 100ms linear;
   transition: color 100ms linear;
-  color: #888888;
+  color: #624644;
+}
+
+.add-rm-button {
+  color: #624644;
+  background-image: none;
+  background-color: transparent;
+  border-color: #624644;
+  border-width: medium;
+  /*outline-style:none;*/
+  box-shadow:none;
+  /*border-color:transparent;*/
+  /*outline:none;*/
+}
+
+.add-rm-button:hover {
+  color: #E3E3DB;
+  background-color: #624644;
+  border-color: #624644;
+  transition: color 100ms linear;
+  box-shadow:none;
+}
+
+.add-rm-button:focus, .add-rm-button.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+          box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
 }
 
 .room-list {
@@ -69,8 +94,6 @@ h1 {
   padding-left: 50px;
   letter-spacing: 1px;
 }
-
-
 
 .room-name:hover {
   cursor: pointer; cursor: hand;
@@ -80,6 +103,14 @@ h1 {
   color: #888888;
 }
 
+.selected-room {
+  opacity: .6;
+  color: #6c221d;
+  -webkit-transition: color 500ms linear;
+  -ms-transition: color 500ms linear;
+  transition: color 500ms linear;
+
+}
 
 .message-room-container {
   padding-top: 60px;
@@ -88,11 +119,9 @@ h1 {
   padding-left: 5px;
   padding-right: 5px;
   max-width: 700px;
-
-
 }
 
-.messages-header {
+.room-name-header {
   border-width: 4px;
   width: 100%;
   color: #E3E3DB;
@@ -107,8 +136,25 @@ h1 {
   padding-left: 5px;
 }
 
+.message-header {
+  font-size: .9em;
+  font-weight: bold;
+  padding-bottom: 3px;
+  opacity: .8;
+}
+
+.date-time {
+  opacity: .6;
+}
+
 .message-content {
-  font-size: 1.5em;
+  font-size: 1.2em;
+  padding-left: 15px;
+}
+
+.your-name {
+  color: rgb(58, 123, 199);
+  /*opacity: .8;*/
 }
 
 .message-form {

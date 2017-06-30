@@ -1,10 +1,11 @@
 (function() {
-  function HomeCtrl(Room, Message, $scope, $log, $uibModal, $cookies, $state, User) {
+  function HomeCtrl(Room, Message, $scope, $log, $uibModal, $cookies, $state, $element, $timeout, User) {
 
     $scope.rooms = Room.all;
     $scope.currentRoom = null;
     $scope.currentUser = User.data;
     $scope.messages = {};
+    $scope.you = User.data;
     // $scope.glued = true;
 
 
@@ -46,12 +47,15 @@
       $scope.newMessage.username = User.data.username;
       $scope.newMessage.sentAt = Date.now();
       Message.send($scope.newMessage);
-
       $scope.newMessage.content = '';
+      //scroll to last child  - thanks @rogie!
+      $timeout(function(){
+        $element[0].querySelector('.messages-list:last-child').scrollIntoView();
+      });
     };
 
   };
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room', 'Message', '$scope', '$log', '$uibModal', '$cookies', '$state', 'User', HomeCtrl]);
+    .controller('HomeCtrl', ['Room', 'Message', '$scope', '$log', '$uibModal', '$cookies', '$state', '$element','$timeout', 'User', HomeCtrl]);
 })();

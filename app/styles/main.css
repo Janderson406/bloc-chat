@@ -2,4 +2,36 @@ body {
   background: #E3E3DB;
   font-family: 'BioRhyme', serif;
   color: #624644;
+  outline-style:none;
+  box-shadow:none;
+  border-color:transparent;
+  outline:none;
 }
+
+:focus {
+  outline-style:none;
+  box-shadow:none;
+  border-color:transparent;
+  outline:none;
+}
+
+/*.fade {
+  transition: 500ms linear all;
+  -webkit-transition: 500ms linear all;
+}
+
+.fade.ng-enter {
+  opacity: 0;
+}
+
+.fade.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.fade.ng-leave {
+  opacity: 1;
+}
+
+.fade.ng-leave.ng-leave-active {
+  opacity: 0;
+}*/
