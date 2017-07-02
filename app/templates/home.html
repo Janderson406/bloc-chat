@@ -19,18 +19,15 @@
 <!-- <div class = "message-room-container" ng-show="currentRoom.$id"> -->
 <div class = "message-room-container">
   <div class="room-name-header">
-    <!-- <h2>Array: {{messages}}</h2> -->
     <h2>{{ currentRoom.$value }}</h2>
   </div>
-  <!-- <div scroll-glue> -->
-    <div class="messages" scroll-glue>
+    <div class="messages">
       <div class="messages-list" ng-repeat="message in messages">
         <div class="message-header"> <span ng-class="{'your-name':message.username == you.username}">{{ message.username }}</span> <span class="date-time">- {{ message.sentAt | date: "medium" }}</span></div> <!-- add ng-show for class where u.n. is currentUser ??-->
         <div class="message-content">{{ message.content }}</div></br>
       </div>
       <!-- <span class="message-content" ng-bind="newMessage.content">{{ newMessage.content }}</span> -->
     </div>
-  <!-- </div> -->
 
   <div class="message-form">
     <input ng-keyup="$event.keyCode == 13 && createMessage()" type="text" name="input" placeholder="Type your message here" class="message-box" ng-model="newMessage.content">
