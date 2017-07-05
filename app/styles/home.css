@@ -207,3 +207,7 @@ h1 {
 .pick-room {
   font-size: 2.5em;
 }
+
+fieldset {
+    margin: 10px 0;
+}

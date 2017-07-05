@@ -11,6 +11,11 @@ body {
 :focus {
   outline-style:none;
   box-shadow:none;
-  border-color:transparent;
+  /*border-color:transparent;*/
   outline:none;
+}
+
+.error {
+    color: red;
+    font-family: sans-serif;
 }
