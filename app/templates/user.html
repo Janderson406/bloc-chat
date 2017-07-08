@@ -1,8 +1,40 @@
-<div class="modal-header">
-    <h3 class="modal-title" id="modal-title">Enter Your Username</h3>
-</div>
+<!-- LOGIN -->
+<form name="login" ng-show="!registerhid" ng-submit="user.login()" novalidate>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Please Log In</h3>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <fieldset>
+      <input type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true">
+      <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true">
+    </fieldset>
 
-<div class="modal-body" id="modal-body">
-  <input type="text" placeholder="Username" ng-model="user.username">
-  <button class="btn btn-default" ng-click="user.addUsername()">Add User</button>
-</div>
+    <button type="submit" class="btn" ng-disabled="login.$invalid">Login</button>
+    <p>or <a href ng-click="registerhid = !registerhid">Register</a></p>
+  </div>
+</form>
+
+<!-- REGISTRATION -->
+<form name="register" ng-show="registerhid" ng-submit="user.register()" novalidate>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Registration</h3>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <fieldset>
+      <input type="text" name="username" placeholder="User Name" ng-model="user.username" ng-required="true">
+      <span class="error validationerror" ng-show="register.username.$invalid && register.username.$touched">A Username is required</span>
+      <br><br>
+      <input type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true">
+      <span class="error validationerror" ng-show="register.email.$invalid && register.email.$touched">Must be a valid email</span>
+      <br><br>
+      <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true">
+      <span class="error validationerror" ng-show="register.password.$invalid && register.password.$touched">Password is required</span>
+    </fieldset>
+
+    <button type="submit" class="btn" ng-disabled="register.$invalid">Register</button>
+    <p>back to <a href ng-click="registerhid = !registerhid">Log In</a></p>
+  </div>
+</form>
+
+    <!-- <input type="text" placeholder="Username" ng-model="user.username">
+    <button class="btn btn-default" ng-click="user.addUsername()">Add User</button> -->

@@ -5,7 +5,8 @@
   </div>
 
   <div class=room-list>
-    <div class="user-info" ng-show="currentUser.username">
+    <div class="user-info" ng-show="currentUser.username ">
+    <!-- <div class="user-info"> -->
       Hello, <span class="user-name">{{ currentUser.username }}!</span>
       <div class="log-out" ng-click="clearUser()">Log Out</div>
     </div>
@@ -23,7 +24,7 @@
   </div>
     <div class="messages">
       <div class="messages-list" ng-repeat="message in messages">
-        <div class="message-header"> <span ng-class="{'your-name':message.username == you.username}">{{ message.username }}</span> <span class="date-time">- {{ message.sentAt | date: "medium" }}</span></div> <!-- add ng-show for class where u.n. is currentUser ??-->
+        <div class="message-header"> <span ng-class="{'your-name':message.username == currentUser.username}">{{ message.username }}</span> <span class="date-time">- {{ message.sentAt | date: "medium" }}</span></div> <!-- add ng-show for class where u.n. is currentUser ??-->
         <div class="message-content">{{ message.content }}</div></br>
       </div>
       <!-- <span class="message-content" ng-bind="newMessage.content">{{ newMessage.content }}</span> -->
